@@ -6,7 +6,7 @@
 /*   By: mito <mito@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 15:11:32 by mito              #+#    #+#             */
-/*   Updated: 2023/11/22 10:44:57 by mito             ###   ########.fr       */
+/*   Updated: 2023/11/24 15:57:33 by mito             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,12 @@
 
 int	print_char(int c)
 {
-	return (write(1, &c, sizeof(char)));
+	int count;
+
+	count = 0;
+	count += write(1, &c, 1);
+	if (count < 0)
+		return (-1);
+	else
+		return (count);
 }

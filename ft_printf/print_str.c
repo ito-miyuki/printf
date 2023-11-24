@@ -6,7 +6,7 @@
 /*   By: mito <mito@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 15:23:34 by mito              #+#    #+#             */
-/*   Updated: 2023/11/22 14:08:11 by mito             ###   ########.fr       */
+/*   Updated: 2023/11/24 15:31:11 by mito             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,17 @@ int	print_str(char *str)
 	count = 0;
 	if (!str)
 	{
-		write(1, "(null)", 6);
-		count = 6;
+		count += write(1, "(null)", 6);
+			if (count < 0)
+				return (-1);
 	}
 	else
 	{
 		while (*str != '\0')
 		{
-			print_char((int)*str);
-			count++;
+			count += print_char((int)*str);
+				if (count < 0)
+					return (-1);
 			str++;
 		}
 	}

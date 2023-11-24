@@ -6,11 +6,12 @@
 /*   By: mito <mito@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 15:14:17 by mito              #+#    #+#             */
-/*   Updated: 2023/11/23 15:00:08 by mito             ###   ########.fr       */
+/*   Updated: 2023/11/24 16:01:52 by mito             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 
 int	print_digit(long n, int base)
 {
@@ -31,3 +32,4 @@ int	print_digit(long n, int base)
 		return (count + print_digit(n % base, base));
 	}
 }
+

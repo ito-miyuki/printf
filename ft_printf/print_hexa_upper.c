@@ -6,7 +6,7 @@
 /*   By: mito <mito@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 15:15:25 by mito              #+#    #+#             */
-/*   Updated: 2023/11/23 14:52:42 by mito             ###   ########.fr       */
+/*   Updated: 2023/11/24 14:32:57 by mito             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,6 @@ int	print_hexa_upper(long n, int base)
 		count = print_hexa_upper(n / base, base);
 		return (count + print_hexa_upper(n % base, base));
 	}
+	if (count == -1)
+		return (-1);
 }

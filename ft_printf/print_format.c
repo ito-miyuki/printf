@@ -6,12 +6,12 @@
 /*   By: mito <mito@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 15:25:36 by mito              #+#    #+#             */
-/*   Updated: 2023/11/23 14:17:04 by mito             ###   ########.fr       */
+/*   Updated: 2023/11/24 15:11:49 by mito             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
+/*
 int	print_format(char specifier, va_list ap)
 {
 	int	count;
@@ -36,4 +36,37 @@ int	print_format(char specifier, va_list ap)
 	else
 		count += write(1, &specifier, 1);
 	return (count);
+}
+*/
+
+int	print_format(char specifier, va_list ap)
+{
+	int	count;
+
+	count = 0;
+	if (count >= 0)
+	{
+		if (specifier == 'c')
+			return (print_char(va_arg(ap, int)));
+		else if (specifier == 's')
+			return (print_str(va_arg(ap, char *)));
+		else if (specifier == 'd' || specifier == 'i')
+			return (print_digit((long)va_arg(ap, int), 10));
+		else if (specifier == 'u')
+			return (print_u_int((long)va_arg(ap, unsigned int)));
+		else if (specifier == 'x')
+			return (print_digit((long)va_arg(ap, unsigned int), 16));
+		else if (specifier == 'X')
+			return (print_hexa_upper((long)va_arg(ap, unsigned int), 16));
+		else if (specifier == '%')
+			return (print_char('%'));
+		else if (specifier == 'p')
+			return (print_ptr((unsigned long)va_arg(ap, void *)));
+		else
+			return (write(1, &specifier, 1));
+		return (count);
+	}
+	if (count == -1)
+		return (-1);
+	return (0);
 }
