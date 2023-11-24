@@ -6,7 +6,7 @@
 /*   By: mito <mito@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 15:25:36 by mito              #+#    #+#             */
-/*   Updated: 2023/11/22 15:40:16 by mito             ###   ########.fr       */
+/*   Updated: 2023/11/23 14:17:04 by mito             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	print_format(char specifier, va_list ap)
 	else if (specifier == '%')
 		count += print_char('%');
 	else if (specifier == 'p')
-		count += print_ptr((long)va_arg(ap, void *));
+		count += print_ptr((unsigned long)va_arg(ap, void *));
 	else
 		count += write(1, &specifier, 1);
 	return (count);

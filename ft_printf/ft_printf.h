@@ -6,7 +6,7 @@
 /*   By: mito <mito@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 10:43:02 by mito              #+#    #+#             */
-/*   Updated: 2023/11/22 16:04:23 by mito             ###   ########.fr       */
+/*   Updated: 2023/11/24 12:16:59 by mito             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	print_str(char *str);
 int	print_digit(long n, int base);
 int	print_u_int(unsigned int n);
 int	print_hexa_upper(long n, int base);
-int	print_ptr(long n);
-int	print_ptraddress(long n);
+int	print_ptr(unsigned long n);
+int	print_ptraddress(unsigned long n);
 
 #endif
