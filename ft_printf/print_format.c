@@ -6,12 +6,13 @@
 /*   By: mito <mito@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 15:25:36 by mito              #+#    #+#             */
-/*   Updated: 2023/11/24 15:11:49 by mito             ###   ########.fr       */
+/*   Updated: 2023/11/26 13:16:05 by mito             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-/*
+
+// this is my original
 int	print_format(char specifier, va_list ap)
 {
 	int	count;
@@ -35,10 +36,13 @@ int	print_format(char specifier, va_list ap)
 		count += print_ptr((unsigned long)va_arg(ap, void *));
 	else
 		count += write(1, &specifier, 1);
+	if (count == -1)
+		return (-1);
 	return (count);
 }
-*/
 
+/*
+// this is modified one base on friends help
 int	print_format(char specifier, va_list ap)
 {
 	int	count;
@@ -64,9 +68,9 @@ int	print_format(char specifier, va_list ap)
 			return (print_ptr((unsigned long)va_arg(ap, void *)));
 		else
 			return (write(1, &specifier, 1));
-		return (count);
 	}
 	if (count == -1)
 		return (-1);
-	return (0);
+	return (count);
 }
+*/
